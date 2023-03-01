@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
-export const BackgroundImage = styled.div`
+type BackgroundImageProps = {
+  imageUrl: string;
+};
+
+export const BackgroundImage = styled.div<BackgroundImageProps>`
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
-`
+`;
 
 export const Body = styled.div`
   height: 90px;
@@ -32,7 +36,8 @@ export const Body = styled.div`
     font-weight: lighter;
     font-size: 16px;
   }
-`
+`;
+
 export const DirectoryItemContainer = styled.div`
   min-width: 30%;
   height: 240px;
